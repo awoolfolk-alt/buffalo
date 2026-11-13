@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Warrior Sticker Sheet</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bangers&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: a comic-supplement sticker sheet. One band per warrior, three die-cut sticker options each, pick one per warrior. */
+:root{
+  --paper:#F4F0E6; --card:#FFFDF7; --ink:#1B1B1B; --muted:#57534B; --line:#CFC6B2; --dot:#E4DCCA;
+  --accent:#A3311A; --pick:#1E6B3A; --pick-ink:#FFFFFF;
+  --display:'Bangers', Impact, 'Arial Black', sans-serif;
+  --body:'Source Serif 4', Georgia, serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#17181D; --card:#1F2027; --ink:#F1ECE0; --muted:#B9B2A3; --line:#3A3B44; --dot:#272832;
+  --accent:#F08A6E; --pick:#5BC489; --pick-ink:#10261A; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#17181D; --card:#1F2027; --ink:#F1ECE0; --muted:#B9B2A3; --line:#3A3B44; --dot:#272832;
+  --accent:#F08A6E; --pick:#5BC489; --pick-ink:#10261A; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:10px;border-bottom:4px double var(--ink);padding-bottom:18px}
+.kicker{font-family:var(--body);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding-bottom:8px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(44px,8vw,84px);letter-spacing:.02em;line-height:1;margin:0;text-wrap:balance}
+.intro{max-width:62ch;margin:0;color:var(--muted)}
+.bar{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between}
+.seg{display:inline-flex;border:2px solid var(--ink);border-radius:999px;overflow:hidden}
+.seg button{font:600 14px var(--body);background:transparent;color:var(--ink);border:0;padding:8px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.picks{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:15px;color:var(--muted)}
+.picks strong{color:var(--ink)}
+.btn{font:600 14px var(--body);border:2px solid var(--ink);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer}
+.btn:focus-visible,.seg button:focus-visible,.pickbtn:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.warrior{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--ink);padding-top:18px}
+.whead{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px}
+.whead h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.4vw,42px);letter-spacing:.03em;margin:0;line-height:1}
+.chip{font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;border:1.5px solid var(--ink);white-space:nowrap}
+.meta{font-size:15px;color:var(--muted);flex-basis:100%}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:460px){.grid{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:10px;position:relative}
+.card.is-picked{border-color:var(--pick);box-shadow:0 0 0 2px var(--pick)}
+.art{background-color:var(--card);background-image:radial-gradient(var(--dot) 1.4px, transparent 1.6px);background-size:14px 14px;border-radius:10px;display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;max-width:100%;padding:8px}
+.art svg{width:100%;height:100%;overflow:visible}
+body.comic .art svg .ink-layer :not(.keep):not(text){stroke:#1B1B1B;stroke-width:4.5px;stroke-linejoin:round;stroke-linecap:round}
+body:not(.comic) .art svg .comic-only{display:none}
+body.newsprint .art svg .ink-layer{filter:grayscale(1) contrast(1.2)}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.type{font-size:14px;font-weight:600}
+.pickbtn{font:600 13px var(--body);border-radius:999px;padding:6px 12px;border:2px solid var(--pick);background:transparent;color:var(--ink);cursor:pointer}
+.card.is-picked .pickbtn{background:var(--pick);color:var(--pick-ink)}
+.note{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;max-width:70ch}
+@media (prefers-reduced-motion:no-preference){.card{transition:box-shadow .15s,border-color .15s}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header>
+    <div class="kicker">The Buffalo Soldier Gazette · Funnies Supplement</div>
+    <h1>Warrior Sticker Sheet</h1>
+    <p class="intro">Original sticker characters for your eight warriors, with three sticker types each: full body, badge and speech bubble. Pick one favorite per warrior, then copy your picks and send them to me so I can place them in the comic panels.</p>
+    <div class="bar">
+      <div class="seg" role="group" aria-label="Sticker color style">
+        <button type="button" id="style-comic" aria-pressed="true">Comic</button>
+        <button type="button" id="style-color" aria-pressed="false">Clean</button>
+        <button type="button" id="style-news" aria-pressed="false">Newsprint comic</button>
+      </div>
+      <div class="picks"><span id="pick-count"><strong>0 of 8</strong> picked</span><button type="button" class="btn" id="copy-picks">Copy my picks</button><span id="copy-status" role="status"></span></div>
+    </div>
+  </header>
+  <main id="sheet" style="display:flex;flex-direction:column;gap:28px"></main>
+  <p class="note">Every character here is an original alternate made for your deck: all Black with locs; the two alien warriors are new aliens of their own, and the ambition warrior is a new robot with cable locs. The crew name under each title shows which Futurama crew member that warrior stands for in your story; the stickers are new characters, not drawings of the show’s cast.</p>
+</div>
+
+<script>
+const PAIRS = {
+  voice:  {label:'The Voice',     main:'#2F6FB3', light:'#DCE9F5', dark:'#1D4A7A'},
+  compass:{label:'The Compass',   main:'#E8BE4F', light:'#FBE7A1', dark:'#8A6420'},
+  launch: {label:'The Launchpad', main:'#3E8E5E', light:'#DDEFD9', dark:'#24603D'},
+  lab:    {label:'The Lab',       main:'#D96C7E', light:'#F6DDD5', dark:'#9C3A4C'}
+};
+const INK = '#1B1B1B';
+const star = (cx,cy,r,fill) => { let p=[]; for(let i=0;i<10;i++){const a=Math.PI/5*i-Math.PI/2; const rr=i%2?r*0.45:r; p.push((cx+rr*Math.cos(a)).toFixed(1)+','+(cy+rr*Math.sin(a)).toFixed(1));} return `<polygon points="${p.join(' ')}" fill="${fill}"/>`; };
+const heart = (cx,cy,s,fill) => `<path transform="translate(${cx} ${cy}) scale(${s})" d="M0 16 C-18 2 -20 -14 -8 -16 C-3 -17 0 -12 0 -8 C0 -12 3 -17 8 -16 C20 -14 18 2 0 16Z" fill="${fill}"/>`;
+const CAP = 'M58 74 Q60 36 100 36 Q140 36 142 74 Q128 58 100 58 Q72 58 58 74Z';
+
+function hair(style, c){
+  switch(style){
+    case 'short': return {back:'', front:`<path d="M56 80 Q54 32 100 30 Q146 32 144 80 Q138 58 120 54 Q100 62 80 54 Q62 58 56 80Z" fill="${c}"/>`};
+    case 'puff':  return {back:`<circle cx="100" cy="62" r="56" fill="${c}"/>`, front:`<path d="${CAP}" fill="${c}"/>`};
+    case 'curly': return {back:'', front:[ [62,60,16],[76,46,16],[94,38,17],[112,38,17],[128,46,16],[140,60,15] ].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`).join('')};
+    case 'bun':   return {back:`<circle cx="100" cy="30" r="19" fill="${c}"/>`, front:`<path d="${CAP}" fill="${c}"/>`};
+    case 'locs':  return {back:[46,58,70,130,142,154].map((x,i)=>{const h=[74,92,98,98,92,74][i];return `<path d="M${x-7} 52 L${x+7} 52 L${x+4} ${52+h} L${x} ${60+h} L${x-4} ${52+h}Z" fill="${c}"/>`;}).join(''), front:`<path d="${CAP}" fill="${c}"/>`+[[64,62],[78,70],[92,66],[108,66],[122,70],[136,62]].map(([x,y])=>`<path d="M${x-8} 34 L${x+8} 34 L${x+2} ${y} L${x} ${y+4} L${x-2} ${y}Z" fill="${c}"/>`).join('')};
+    case 'locsBun': return {back:`<circle cx="100" cy="24" r="20" fill="${c}"/><path d="M100 4 L106 -10 L110 6Z M88 8 L80 -4 L92 4Z" fill="${c}"/>`+[54,146].map(x=>`<path d="M${x-7} 56 L${x+7} 56 L${x+3} 120 L${x} 128 L${x-3} 120Z" fill="${c}"/>`).join(''), front:`<path d="${CAP}" fill="${c}"/>`+[[72,60],[88,66],[104,64],[120,58]].map(([x,y])=>`<path d="M${x-8} 36 L${x+8} 36 L${x+2} ${y} L${x} ${y+4} L${x-2} ${y}Z" fill="${c}"/>`).join('')};
+    default: return {back:'', front:''};
+  }
+}
+function face(kind, iris){
+  iris = iris || '#7A4520';
+  const k = (d,w=4,c=INK)=>`<path class="keep" d="${d}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`;
+  const blush = k('M68 108 l5 -5 M74 108 l5 -5 M80 108 l5 -5',2.2,'#E2626B')+k('M120 108 l5 -5 M126 108 l5 -5 M132 108 l5 -5',2.2,'#E2626B');
+  const nose = k('M100 100 l-3 5 h5',2,'#2A1A12');
+  const brows = (l)=>k(`M70 ${72-l} L94 ${66-l}`,4.5)+k(`M106 ${66-l} L130 ${72-l}`,4.5);
+  const eye = (cx,dir)=>{
+    const x=v=>cx+dir*(v-84);
+    return `<path class="keep" d="M${x(71)} 86 Q${x(84)} 74 ${x(97)} 86 L${x(96)} 100 Q${x(84)} 106 ${x(72)} 100Z" fill="#FFFFFF"/>`
+      + `<ellipse class="keep" cx="${x(85)}" cy="92" rx="8" ry="10.5" fill="${iris}"/><ellipse class="keep" cx="${x(85)}" cy="93" rx="4" ry="6" fill="${INK}"/>`
+      + `<circle class="keep" cx="${x(88)}" cy="87.5" r="3.2" fill="#FFFFFF"/><circle class="keep" cx="${x(81.5)}" cy="97" r="1.6" fill="#FFFFFF"/>`
+      + k(`M${x(68)} 87 Q${x(84)} 70 ${x(99)} 84`,5.5) + k(`M${x(68)} 87 l${dir*-6} -4`,3);
+  };
+  const eyes = eye(84,1)+eye(116,-1);
+  if(kind==='calm') return brows(-3)+k('M70 94 Q84 102 98 94',4.5)+k('M70 94 l-5 3 M75 98 l-3 5',2.5)+k('M102 94 Q116 102 130 94',4.5)+k('M130 94 l5 3 M125 98 l3 5',2.5)+nose+k('M94 114 Q100 118 106 114',3.5)+blush;
+  if(kind==='grin') return brows(3)+eyes+nose+`<path class="keep" d="M89 110 Q100 126 111 110Z" fill="${INK}"/><path class="keep" d="M92 111 h16 l-1 3 h-14z" fill="#FFFFFF"/><path class="keep" d="M94 119 Q100 124 106 119Z" fill="#F07C7C"/>`+blush;
+  return brows(0)+eyes+nose+k('M93 113 Q100 118 107 113',3.5)+blush;
+}
+function arms(o){
+  const t=o.top, s=o.skin;
+  const L=`<rect x="40" y="126" width="22" height="60" rx="11" fill="${t}"/><circle cx="51" cy="188" r="11" fill="${s}"/>`;
+  const R=`<rect x="138" y="126" width="22" height="60" rx="11" fill="${t}"/><circle cx="149" cy="188" r="11" fill="${s}"/>`;
+  if(o.pose==='upRight') return L+`<rect x="138" y="70" width="22" height="64" rx="11" fill="${t}" transform="rotate(20 149 130)"/><circle cx="170" cy="72" r="11" fill="${s}"/>`;
+  if(o.pose==='outBoth') return `<rect x="40" y="126" width="22" height="60" rx="11" fill="${t}" transform="rotate(35 51 130)"/><circle cx="18" cy="177" r="11" fill="${s}"/><rect x="138" y="126" width="22" height="60" rx="11" fill="${t}" transform="rotate(-35 149 130)"/><circle cx="182" cy="177" r="11" fill="${s}"/>`;
+  return L+R;
+}
+function figure(o, headOnly, ht){
+  const h = hair(o.hair, o.hairColor);
+  const dots = ht ? `fill="url(#${ht})"` : 'fill="none"';
+  let s='';
+  if(!headOnly){
+    if(o.behind) s+=o.behind;
+    s+=`<rect x="76" y="188" width="21" height="50" rx="10" fill="${o.pants}"/><rect x="103" y="188" width="21" height="50" rx="10" fill="${o.pants}"/>`;
+    s+=`<ellipse cx="85" cy="240" rx="17" ry="9" fill="${o.shoes}"/><ellipse cx="115" cy="240" rx="17" ry="9" fill="${o.shoes}"/>`;
+    s+=arms(o);
+    s+=`<rect x="60" y="118" width="80" height="84" rx="28" fill="${o.top}"/>`;
+    s+=`<path class="keep" d="M118 119 h4 q18 0 18 28 v28 q0 27 -27 27 h-4 q12 -12 12 -40 q0 -30 -3 -43z" fill="#000000" fill-opacity=".18"/>`;
+    s+=`<rect class="keep" x="68" y="128" width="7" height="44" rx="3.5" fill="#FFFFFF" fill-opacity=".3"/>`;
+    s+=`<path class="keep" d="M72 198 q8 -6 16 0 M112 198 q8 -6 16 0" fill="none" stroke="#000000" stroke-opacity=".35" stroke-width="2.5" stroke-linecap="round"/>`;
+    s+=`<rect class="keep" x="111" y="192" width="11" height="44" rx="5.5" fill="#000000" fill-opacity=".18"/>`;
+    s+=`<rect class="keep comic-only" x="112" y="122" width="26" height="78" rx="13" ${dots}/>`;
+    if(o.body) s+=o.body;
+  }
+  if(o.robot){
+    const m=o.metal, g='#E8BE4F';
+    s+=[48,62,138,152].map(x=>`<rect x="${x-6}" y="54" width="12" height="78" rx="6" fill="#141418"/><rect x="${x-7}" y="104" width="14" height="7" rx="2" fill="${g}"/>`).join('');
+    s+=`<rect x="56" y="38" width="88" height="86" rx="20" fill="${m}"/>`;
+    s+=[70,84,100,116,130].map(x=>`<rect x="${x-5}" y="16" width="10" height="34" rx="5" fill="#141418"/><rect x="${x-6}" y="20" width="12" height="6" rx="2" fill="${g}"/>`).join('');
+    s+=`<path class="keep" d="M128 40 q16 0 16 20 v44 q0 20 -16 20 z" fill="#000000" fill-opacity=".25"/><rect class="keep" x="62" y="44" width="30" height="7" rx="3.5" fill="#FFFFFF" fill-opacity=".3"/>`;
+    s+=`<rect x="66" y="58" width="68" height="46" rx="12" fill="#0E1A22"/><path class="keep" d="M72 62 h22 l-14 18 h-8z" fill="#FFFFFF" fill-opacity=".12"/><path class="keep" d="M76 66 Q84 60 92 66 L92 82 Q84 86 76 82Z" fill="#5CE1E6"/><path class="keep" d="M108 66 Q116 60 124 66 L124 82 Q116 86 108 82Z" fill="#5CE1E6"/><circle class="keep" cx="88" cy="69" r="2.5" fill="#FFFFFF"/><circle class="keep" cx="120" cy="69" r="2.5" fill="#FFFFFF"/><path class="keep" d="M92 92 Q100 98 108 92" fill="none" stroke="#5CE1E6" stroke-width="3.5" stroke-linecap="round"/><path class="keep" d="M72 64 L94 60 M106 60 L128 64" stroke="#5CE1E6" stroke-width="3" stroke-linecap="round"/>`;
+    s+=`<circle cx="56" cy="82" r="8" fill="${g}"/><circle cx="144" cy="82" r="8" fill="${g}"/>`;
+    s+=`<rect class="keep comic-only" x="118" y="42" width="22" height="78" rx="10" ${dots}/>`;
+    if(!headOnly && o.front) s+=o.front;
+    return s;
+  }
+  if(o.antenna) s+=`<path d="M88 44 Q80 22 72 8 M112 44 Q120 22 128 8" fill="none" stroke="${o.skin}" stroke-width="6" stroke-linecap="round"/><circle cx="72" cy="8" r="8" fill="${o.antenna}"/><circle cx="128" cy="8" r="8" fill="${o.antenna}"/>`;
+  s+=(o.headBack||'')+h.back;
+  s+= o.ears==='pointy'
+    ? `<path d="M60 74 L30 62 L56 100Z" fill="${o.skin}"/><path d="M140 74 L170 62 L144 100Z" fill="${o.skin}"/>`
+    : `<circle cx="56" cy="86" r="9" fill="${o.skin}"/><circle cx="144" cy="86" r="9" fill="${o.skin}"/>`;
+  s+=`<path d="M56 78 Q56 36 100 36 Q144 36 144 78 Q144 104 124 120 Q110 131 100 131 Q90 131 76 120 Q56 104 56 78Z" fill="${o.skin}"/>`;
+  if(o.thirdEye) s+=`<ellipse cx="100" cy="70" rx="5.5" ry="6.5" fill="${INK}"/><circle class="keep" cx="102" cy="68" r="1.8" fill="#FFFFFF"/>`;
+  if(o.horns) s+=`<path d="M70 46 L64 26 L80 40Z" fill="${o.horns}"/><path d="M130 46 L136 26 L120 40Z" fill="${o.horns}"/>`;
+  s+=`<path class="keep" d="M116 42 A44 44 0 0 1 116 122 A30 42 0 0 0 116 42Z" fill="#000000" fill-opacity=".16"/>`;
+  s+=`<path class="keep comic-only" d="M112 40 A44 44 0 0 1 112 124 A34 44 0 0 0 112 40Z" ${dots}/>`;
+  s+=`<ellipse class="keep" cx="80" cy="60" rx="11" ry="6" fill="#FFFFFF" fill-opacity=".25" transform="rotate(-25 80 60)"/>`;
+  s+=`<path class="keep comic-only" d="M74 70 q6 -6 12 -2" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity=".7"/>`;
+  s+=h.front+face(o.face, o.iris)+(o.head||'');
+  if(!headOnly && o.front) s+=o.front;
+  return s;
+}
+const cup=(x,y)=>`<path d="M${x-4} ${y-30} q-5 -8 0 -14 M${x+5} ${y-30} q5 -8 0 -14" stroke="#9AA3AD" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="${x-13}" y="${y-24}" width="26" height="30" rx="5" fill="#FFFFFF" stroke="${INK}" stroke-width="2"/><rect x="${x-13}" y="${y-14}" width="26" height="9" fill="#8B5A2B"/>`;
+
+const W = [
+ {key:'clearline', name:'Captain Clearline', trait:'Communication & Competence', crew:'Leela', kind:'Professional', pair:'voice',
+  quote:['HERE’S THE PLAN.','CLEAR & SIMPLE.'],
+  fig:{skin:'#5C3A21', hair:'locs', hairColor:'#1B1B1B', top:'#2F6FB3', pants:'#1D3557', shoes:INK, face:'happy',
+   body: star(100,152,13,'#F2C94C'),
+   head:`<path d="M54 84 Q54 28 100 28 Q146 28 146 84" fill="none" stroke="${INK}" stroke-width="6"/><rect x="45" y="74" width="15" height="26" rx="6" fill="${INK}"/><rect x="140" y="74" width="15" height="26" rx="6" fill="${INK}"/><path d="M52 98 Q58 116 80 113" fill="none" stroke="${INK}" stroke-width="4"/><circle cx="82" cy="113" r="5" fill="${INK}"/>`,
+   front:`<rect x="138" y="148" width="46" height="58" rx="5" fill="#B07A3B"/><rect x="144" y="156" width="34" height="44" rx="2" fill="#FFFFFF"/><rect x="153" y="143" width="16" height="10" rx="3" fill="#7A7A7A"/><path d="M149 168h24M149 178h24M149 188h16" stroke="#2F6FB3" stroke-width="3" stroke-linecap="round"/><circle cx="146" cy="192" r="10" fill="#5C3A21"/>`}},
+ {key:'harmony', name:'Host Harmony', trait:'Soft skills', crew:'Amy', kind:'Professional', pair:'voice',
+  quote:['COFFEE FIRST,','THEN WE TALK.'],
+  fig:{skin:'#6B4226', hair:'locsBun', hairColor:'#2A1A10', top:'#7FB3E0', pants:'#33506E', shoes:'#2B2B2B', face:'happy', pose:'outBoth',
+   body:`<path d="M78 138 h44 v54 q-22 10 -44 0z" fill="#FFFFFF" opacity=".92"/>`+heart(100,160,0.7,'#7FB3E0'),
+   front: cup(18,177)+cup(182,177)}},
+ {key:'climber', name:'Climb-Bot', trait:'Ambitious', crew:'Bender (gold edition)', kind:'Personal', pair:'compass',
+  quote:['TIER 2?','WATCH ME CLIMB.'],
+  fig:{robot:true, metal:'#2B2B33', skin:'#5A5A66', top:'#3A3A44', pants:'#2B2B33', shoes:'#E8BE4F', face:'grin', pose:'upRight',
+   behind:`<path d="M66 126 Q36 196 44 238 L156 238 Q164 196 134 126 Z" fill="#B8862B"/>`,
+   body: `<rect x="74" y="134" width="52" height="40" rx="8" fill="#22222A"/>`+star(100,154,14,'#E8BE4F')+`<rect x="62" y="182" width="76" height="8" rx="3" fill="#E8BE4F"/>`,
+   front:`<line x1="172" y1="94" x2="172" y2="2" stroke="${INK}" stroke-width="5" stroke-linecap="round"/><path d="M172 4 L230 18 L172 34 Z" fill="${INK}"/><text x="196" y="23" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="12" fill="#F2C94C">TIER 2</text><circle cx="170" cy="72" r="11" fill="#5A5A66"/>`}},
+ {key:'calm', name:'Calm Compass', trait:'Self-awareness & Considerate', crew:'Kif', kind:'Personal', pair:'compass',
+  quote:['BREATHE.','THEN DECIDE.'],
+  fig:{skin:'#3B2A33', hair:'locs', hairColor:'#120C0F', top:'#F2D27A', pants:'#6B4E16', shoes:'#2B2B2B', face:'calm', ears:'pointy', antenna:'#7FE3D0',
+   body: heart(100,156,1,'#D94A5A'),
+   front:`<path d="M10 70 q10 -12 20 0 t20 0" fill="none" stroke="#C99A2E" stroke-width="4" stroke-linecap="round"/><path d="M150 52 q10 -12 20 0 t20 0" fill="none" stroke="#C99A2E" stroke-width="4" stroke-linecap="round"/><path d="M160 92 q8 -9 16 0 t16 0" fill="none" stroke="#C99A2E" stroke-width="4" stroke-linecap="round"/>`}},
+ {key:'ticket', name:'Sir Ticket', trait:'Reliability', crew:'Hermes', kind:'Professional', pair:'launch',
+  quote:['FILED, STAMPED,','DONE.'],
+  fig:{skin:'#5C3A21', hair:'locs', hairColor:'#1B1B1B', top:'#3E8E5E', pants:'#24603D', shoes:INK, face:'happy',
+   body:`<path d="M84 118 L100 136 L116 118Z" fill="#FFFFFF"/><path d="M89 128 L100 135 L89 142Z M111 128 L100 135 L111 142Z" fill="#C0392B"/><circle cx="100" cy="158" r="3" fill="#FFFFFF"/><circle cx="100" cy="174" r="3" fill="#FFFFFF"/>`,
+   head:`<rect class="keep" x="68" y="78" width="30" height="26" rx="6" fill="none" stroke="${INK}" stroke-width="3"/><rect class="keep" x="102" y="78" width="30" height="26" rx="6" fill="none" stroke="${INK}" stroke-width="3"/><path class="keep" d="M98 88h4" stroke="${INK}" stroke-width="3"/>`,
+   front:`<rect x="10" y="166" width="62" height="38" rx="3" fill="#FFF8E7" stroke="${INK}" stroke-width="2"/><text x="41" y="192" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="17" fill="#C0392B" transform="rotate(-8 41 186)">FILED</text><circle cx="51" cy="190" r="10" fill="#5C3A21"/><rect x="139" y="158" width="22" height="20" rx="3" fill="#8B5A2B"/><rect x="134" y="176" width="32" height="10" rx="2" fill="${INK}"/>`}},
+ {key:'scout', name:'Scout Newday', trait:'Openness to experience', crew:'Fry', kind:'Personal', pair:'launch',
+  quote:['NEW TOOL?','LET’S TRY IT!'],
+  fig:{skin:'#6B4226', hair:'locs', hairColor:'#1B1B1B', top:'#7CC59A', pants:'#3B5B44', shoes:'#5A3D22', face:'grin',
+   behind:`<rect x="52" y="120" width="96" height="78" rx="22" fill="#2E7D4F"/>`,
+   body:`<path d="M76 124 v68 M124 124 v68" stroke="#2E7D4F" stroke-width="7" stroke-linecap="round"/>`,
+   head:`<path d="M46 62 Q100 48 154 62 L146 72 Q100 62 54 72Z" fill="#C9A86A"/><path d="M64 63 Q66 24 100 24 Q134 24 136 63Z" fill="#C9A86A"/><rect x="64" y="52" width="72" height="8" fill="#8A6A35"/>`,
+   front:`<circle cx="48" cy="190" r="17" fill="#FFFFFF" stroke="${INK}" stroke-width="3"/><path d="M48 178 L53 190 L48 202 L43 190Z" fill="#C0392B"/><circle cx="48" cy="190" r="3" fill="${INK}"/>`}},
+ {key:'doc', name:'Doc Three-Plans', trait:'Problem-solving', crew:'The Professor', kind:'Professional', pair:'lab',
+  quote:['I’VE GOT','THREE PLANS!'],
+  fig:{skin:'#4A2C17', hair:'locs', hairColor:'#1B1B1B', top:'#F4F6F8', pants:'#4A4E69', shoes:INK, face:'grin', pose:'upRight',
+   body:`<path d="M88 120 L100 146 L112 120Z" fill="#D96C7E"/><path d="M100 146 L100 200" stroke="#C9CED6" stroke-width="3"/><path d="M90 122 L82 160 M110 122 L118 160" stroke="#C9CED6" stroke-width="3"/><rect x="66" y="160" width="20" height="16" rx="3" fill="#E6E9EE"/><rect x="70" y="154" width="3" height="12" fill="#D96C7E"/><rect x="76" y="154" width="3" height="12" fill="#2F6FB3"/>`,
+   head:`<rect x="62" y="50" width="76" height="14" rx="7" fill="${INK}"/><circle cx="84" cy="57" r="12" fill="#8FD3F4" stroke="${INK}" stroke-width="4"/><circle cx="116" cy="57" r="12" fill="#8FD3F4" stroke="${INK}" stroke-width="4"/>`,
+   front:`<circle cx="172" cy="40" r="19" fill="#FFE066" stroke="${INK}" stroke-width="3"/><rect x="164" y="57" width="16" height="12" rx="2" fill="#9AA0A6" stroke="${INK}" stroke-width="2"/><path d="M172 10v-10 M198 24l9-6 M146 24l-9-6" stroke="#E8A400" stroke-width="5" stroke-linecap="round"/><circle cx="170" cy="72" r="11" fill="#4A2C17"/><path d="M38 160 h22 v10 l12 26 q2 8 -6 8 h-34 q-8 0 -6 -8 l12 -26z" fill="#DDF3F0" stroke="${INK}" stroke-width="2"/><path d="M30 190 h38 l3 7 q1 5 -5 5 h-34 q-6 0 -5 -5z" fill="#D96C7E"/><circle cx="51" cy="188" r="10" fill="#4A2C17"/>`}},
+ {key:'buddy', name:'Dr. Big-Heart', trait:'Agreeableness', crew:'Zoidberg', kind:'Personal', pair:'lab',
+  quote:['NEED A HAND?','I’M HERE!'],
+  fig:{skin:'#2E2A36', hair:'locs', hairColor:'#0F0C12', top:'#D96C7E', pants:'#D96C7E', shoes:'#FFFFFF', face:'grin', pose:'outBoth', horns:'#B9A7E0', iris:'#8E6BD8',
+   head:`<path class="keep" d="M91 58 Q100 48 109 58 Q100 66 91 58Z" fill="#FFFFFF" stroke="${INK}" stroke-width="3"/><circle class="keep" cx="100" cy="58" r="4.5" fill="#8E6BD8"/><circle class="keep" cx="100" cy="58" r="2" fill="${INK}"/><circle class="keep" cx="102" cy="56" r="1.3" fill="#FFFFFF"/>`,
+   body:`<path d="M86 120 L100 140 L114 120Z" fill="#9C3A4C"/><path d="M82 124 Q78 160 96 166 Q114 160 118 124" fill="none" stroke="#2B2B2B" stroke-width="4"/><circle cx="96" cy="170" r="7" fill="#C9CED6"/>`+heart(122,150,0.6,'#FFF4F6')}}
+];
+
+let uid=0;
+function stickerFilter(id){
+  return `<filter id="${id}" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB"><feMorphology in="SourceAlpha" operator="dilate" radius="7" result="d"/><feFlood flood-color="#FFFFFF" result="w"/><feComposite in="w" in2="d" operator="in" result="outline"/><feGaussianBlur in="d" stdDeviation="5" result="b"/><feOffset in="b" dy="6" result="o"/><feFlood flood-color="#000000" flood-opacity="0.28" result="k"/><feComposite in="k" in2="o" operator="in" result="shadow"/><feMerge><feMergeNode in="shadow"/><feMergeNode in="outline"/><feMergeNode in="SourceGraphic"/></feMerge></filter>`;
+}
+const BURST={clearline:'ROGER!',harmony:'CHEERS!',climber:'ZOOM!',calm:'CALM…',ticket:'STAMP!',scout:'WOW!',doc:'EUREKA!',buddy:'HUG!'};
+function burst(cx,cy,r1,r2,n,fill){ let p=[]; for(let i=0;i<n*2;i++){const a=Math.PI/n*i-Math.PI/2; const r=i%2?r2:r1; p.push((cx+r*Math.cos(a)).toFixed(1)+','+(cy+r*Math.sin(a)).toFixed(1));} return `<polygon points="${p.join(' ')}" fill="${fill}"/>`; }
+function svgWrap(vb, innerFn, label){
+  const id='stk'+(uid++), ht='ht'+id;
+  const pat=`<pattern id="${ht}" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.8" fill="#1B1B1B" opacity=".32"/></pattern>`;
+  return `<svg viewBox="${vb}" role="img" aria-label="${label}"><defs>${stickerFilter(id)}${pat}</defs><g filter="url(#${id})"><g class="ink-layer">${innerFn(ht)}</g></g></svg>`;
+}
+function fullBody(w){
+  const p=PAIRS[w.pair];
+  return svgWrap('-56 -24 306 302', ht =>
+    `<g class="comic-only">${burst(-10,26,50,30,12,p.light)}<text x="-10" y="34" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="22" fill="#1B1B1B" transform="rotate(-12 -10 30)">${BURST[w.key]}</text></g>`
+    + `<g class="comic-only keep"><path class="keep" d="M-40 150h26 M-46 170h34 M-40 190h26" stroke="#1B1B1B" stroke-width="4" stroke-linecap="round"/></g>`
+    + figure(w.fig,false,ht), `${w.name}, full-body sticker`);
+}
+function badge(w){
+  const p=PAIRS[w.pair];
+  return svgWrap('-14 -8 268 252', ht =>
+      `<g class="comic-only">${burst(120,112,116,100,20,p.main)}</g>`
+    + `<circle class="keep" cx="120" cy="112" r="100" fill="${p.light}" stroke="${p.main}" stroke-width="12"/><circle class="keep comic-only" cx="120" cy="112" r="94" fill="url(#${ht})"/><circle class="keep" cx="120" cy="112" r="84" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-dasharray="6 7"/>`
+    + `<g transform="translate(20 30)">${figure(w.fig,true,ht)}</g>`
+    + `<path d="M8 186 L34 186 L34 176 L206 176 L206 186 L232 186 L218 206 L232 226 L8 226 L22 206 Z" fill="${p.dark}"/><rect x="34" y="176" width="172" height="42" fill="${p.main}"/>`
+    + `<text x="120" y="206" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="24" fill="${w.pair==='compass'?INK:'#FFFFFF'}" textLength="156" lengthAdjust="spacingAndGlyphs">${w.name.toUpperCase()}</text>`,
+    `${w.name}, badge sticker`);
+}
+function bubble(w){
+  const p=PAIRS[w.pair];
+  return svgWrap('0 0 300 230', ht =>
+      `<path class="keep" d="M76 146 L58 198 L112 146Z" fill="#FFFFFF" stroke="${INK}" stroke-width="5" stroke-linejoin="round"/><rect class="keep" x="10" y="12" width="276" height="138" rx="42" fill="#FFFFFF" stroke="${INK}" stroke-width="5"/><path class="keep" d="M80 144 L64 186 L106 144Z" fill="#FFFFFF"/>`
+    + `<rect class="keep" x="22" y="24" width="252" height="10" rx="5" fill="${p.light}"/><rect class="keep comic-only" x="22" y="120" width="160" height="20" rx="8" fill="url(#${ht})"/>`
+    + `<text x="148" y="80" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="32" fill="${INK}">${w.quote[0]}</text>`
+    + `<text x="148" y="118" text-anchor="middle" font-family="Bangers, Impact, sans-serif" font-size="32" fill="${p.dark}">${w.quote[1]}</text>`
+    + `<g transform="translate(196 116) scale(0.62)">${figure(w.fig,true,ht)}</g>`,
+    `${w.name}, speech bubble sticker saying ${w.quote.join(' ')}`);
+}
+
+const TYPES=[['full','Full body',fullBody],['badge','Badge',badge],['bubble','Speech bubble',bubble]];
+let picks={};
+try{ picks=JSON.parse(localStorage.getItem('warrior-picks')||'{}')||{}; }catch(e){ picks={}; }
+function savePicks(){ try{ localStorage.setItem('warrior-picks', JSON.stringify(picks)); }catch(e){} }
+
+const sheet=document.getElementById('sheet');
+sheet.innerHTML = W.map(w=>{
+  const p=PAIRS[w.pair];
+  return `<section class="warrior" aria-labelledby="h-${w.key}">
+    <div class="whead"><h2 id="h-${w.key}">${w.name}</h2><span class="chip" style="background:${p.light};color:#1B1B1B;border-color:${p.main}">${p.label}</span><span class="chip">${w.kind}</span>
+    <span class="meta">${w.trait} · stands in for <strong>${w.crew}</strong> in your story</span></div>
+    <div class="grid">${TYPES.map(([t,label,fn])=>`<div class="card" data-w="${w.key}" data-t="${t}">
+      <div class="art">${fn(w)}</div>
+      <div class="foot"><span class="type">${label}</span><button type="button" class="pickbtn" id="pick-${w.key}-${t}" aria-pressed="false">Pick</button></div>
+    </div>`).join('')}</div></section>`;
+}).join('');
+
+function render(){
+  document.querySelectorAll('.card').forEach(c=>{
+    const on = picks[c.dataset.w]===c.dataset.t;
+    c.classList.toggle('is-picked',on);
+    const b=c.querySelector('.pickbtn'); b.setAttribute('aria-pressed',on); b.textContent=on?'Picked':'Pick';
+  });
+  const n=W.filter(w=>picks[w.key]).length;
+  document.getElementById('pick-count').innerHTML=`<strong>${n} of 8</strong> picked`;
+}
+sheet.addEventListener('click',e=>{
+  const b=e.target.closest('.pickbtn'); if(!b) return;
+  const c=b.closest('.card');
+  picks[c.dataset.w] = picks[c.dataset.w]===c.dataset.t ? undefined : c.dataset.t;
+  if(!picks[c.dataset.w]) delete picks[c.dataset.w];
+  savePicks(); render();
+});
+render();
+
+let currentStyle='Comic';
+function setStyle(name){
+  currentStyle=name;
+  document.body.classList.toggle('comic', name!=='Clean');
+  document.body.classList.toggle('newsprint', name==='Newsprint comic');
+  document.getElementById('style-comic').setAttribute('aria-pressed', name==='Comic');
+  document.getElementById('style-color').setAttribute('aria-pressed', name==='Clean');
+  document.getElementById('style-news').setAttribute('aria-pressed', name==='Newsprint comic');
+}
+document.getElementById('style-comic').addEventListener('click',()=>setStyle('Comic'));
+document.getElementById('style-color').addEventListener('click',()=>setStyle('Clean'));
+document.getElementById('style-news').addEventListener('click',()=>setStyle('Newsprint comic'));
+setStyle('Comic');
+
+document.getElementById('copy-picks').addEventListener('click',()=>{
+  const style=currentStyle;
+  const label={full:'Full body',badge:'Badge',bubble:'Speech bubble'};
+  const lines=W.map(w=>`${w.name} (${w.crew}): ${picks[w.key]?label[picks[w.key]]:'no pick yet'}`);
+  const text=`My sticker picks (${style}):\n`+lines.join('\n');
+  const status=document.getElementById('copy-status');
+  const done=()=>{status.textContent='Copied. Paste it in the chat.';};
+  const fail=()=>{status.textContent='Copy is blocked here. Tell me your picks in the chat instead.';};
+  try{ navigator.clipboard.writeText(text).then(done,fail); }catch(e){ fail(); }
+});
+</script>
+
+</body>
+</html>
